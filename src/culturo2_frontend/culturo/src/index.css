@@ -1,0 +1,62 @@
+/* Import eksternal CSS */
+@import 'animate.css';
+@import '~font-awesome/css/font-awesome.min.css';
+
+/* Mengimpor Tailwind base, components, dan utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global Styling */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: auto; /* Scroll tetap diaktifkan */
+}
+
+::-webkit-scrollbar {
+  display: none; /* Menghilangkan scrollbar di Chrome, Safari, dan Edge */
+}
+
+body {
+  -ms-overflow-style: none; /* Menghilangkan scrollbar di IE/Edge */
+  scrollbar-width: none; /* Menghilangkan scrollbar di Firefox */
+}
+
+/* Utilities tambahan */
+@layer utilities {
+  /* Background dengan pattern */
+  .bg-pattern {
+    background-image: url('/public/assets/pattern.png');
+    background-size: cover; /* Menutupi seluruh area */
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* Hilangkan scrollbar di elemen tertentu */
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE/Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, dan Opera */
+  }
+}
+
+/* Animasi FadeIn */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out;
+}

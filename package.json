@@ -1,0 +1,21 @@
+{
+    "name": "culturo2",
+    "version": "0.1.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "start": "cd src/culturo2_frontend/culturo && npm start",
+        "prebuild": "npm run prebuild --workspaces --if-present",
+        "build": "npm run build --workspaces --if-present",
+        "pretest": "npm run prebuild --workspaces --if-present",
+        "test": "npm test --workspaces --if-present"
+    },
+    "engines": {
+        "node": ">=16.0.0",
+        "npm": ">=7.0.0"
+    },
+    "workspaces": [
+        "src/culturo2_backend",
+        "src/culturo2_frontend/culturo"
+    ]
+}
