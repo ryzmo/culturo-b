@@ -1,59 +1,116 @@
-# culturo2
+# Culturo - A Global Hub for Culture
 
-Welcome to your new culturo2 project and to the internet computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
+**Culturo** adalah platform inovatif berbasis Internet Computer Protocol (ICP) yang memungkinkan pengguna untuk belajar, memamerkan, dan membeli produk budaya dari seluruh dunia. Dengan teknologi blockchain, Culturo bertujuan untuk melestarikan warisan budaya sekaligus memberdayakan komunitas lokal secara ekonomi.
 
-To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
+---
 
-To learn more before you start working with culturo2, see the following documentation available online:
+## 🌟 Features
 
-- [Quick Start](https://internetcomputer.org/docs/current/developer-docs/setup/deploy-locally)
-- [SDK Developer Tools](https://internetcomputer.org/docs/current/developer-docs/setup/install)
-- [Motoko Programming Language Guide](https://internetcomputer.org/docs/current/motoko/main/motoko)
-- [Motoko Language Quick Reference](https://internetcomputer.org/docs/current/motoko/main/language-manual)
+1. **CultureLearn**: Sumber belajar dan tutorial tentang budaya.
+2. **CultureShowcase**: Ruang untuk berbagi dan menemukan seni serta tradisi budaya global.
+3. **CultureMart**: Marketplace e-commerce untuk produk budaya unik.
+4. **CultureChallenges**: Tantangan harian/mingguan untuk melibatkan pengguna dan memberikan hadiah.
 
-If you want to start working on your project right away, you might want to try the following commands:
+---
 
-```bash
-cd culturo2/
-dfx help
-dfx canister --help
+## 🛠️ Tech Stack
+
+- **Frontend**: React.js/Vue.js, Tailwind CSS
+- **Backend**: Motoko, Rust, ICP Canisters
+- **Database**: Penyimpanan terdesentralisasi di Internet Computer
+- **Tools**: Internet Identity ICP untuk autentikasi pengguna dan WebAssembly untuk performa tinggi
+
+---
+
+## 🚀 How to Run the Project
+
+### Prerequisites
+1. Install **Node.js** (v16 atau lebih baru)
+2. Install **DFINITY SDK** untuk pengembangan ICP:
+   ```bash
+   sh -ci "$(curl -fsSL https://internetcomputer.org/install.sh)"
+   ```
+3. Install dependencies proyek:
+   ```bash
+   npm install
+   ```
+
+### Steps to Run Locally
+1. Clone repository:
+   ```bash
+   git clone https:/https://github.com/ryzmo/culturo-b
+   cd culturo-b
+   ```
+2. Jalankan jaringan Internet Computer secara lokal:
+   ```bash
+   dfx start
+   ```
+3. Deploy canisters (smart contracts):
+   ```bash
+   dfx deploy
+   ```
+4. Jalankan aplikasi frontend:
+   ```bash
+   npm run start
+   ```
+5. Buka browser dan navigasikan ke `http://localhost:3000` untuk melihat aplikasi.
+
+---
+
+## 🔧 Directory Structure
+
+```plaintext
+culturo-b/
+├── .dfx/                          # File ICP lokal
+├── node_modules/                  # Dependencies Node.js
+├── public/                        # Aset publik
+├── src/                           # Kode sumber
+│   ├── assets/                    # Aset statis
+│   ├── culto_backend/             # Backend (Motoko)
+│   ├── culto_frontend/            # Frontend utama
+├── declarations/                  # Deklarasi untuk Internet Identity
+│   ├── internet_identity/         # Konfigurasi Internet Identity
+├── .env                           # Konfigurasi lingkungan
+├── .gitignore                     # File yang dikecualikan Git
+├── dfx.json                       # Konfigurasi ICP
+├── package-lock.json              # Versi dependencies
+├── package.json                   # Daftar dependencies Node.js
+├── postcss.config.js              # Konfigurasi PostCSS
+├── tailwind.config.js             # Konfigurasi TailwindCSS
+├── tsconfig.json                  # Konfigurasi TypeScript
+└── README.md                      # Dokumentasi proyek
 ```
 
-## Running the project locally
+---
 
-If you want to test your project locally, you can use the following commands:
+## 👥 Project Team
 
-```bash
-# Starts the replica, running in the background
-dfx start --background
+Proyek ini dikembangkan oleh tim berikut dalam rangka **Hackathon 9.0**:
 
-# Deploys your canisters to the replica and generates your candid interface
-dfx deploy
-```
+1. **Muhammad Farhan Fadlurrohman** - Fontend and Backend Developer  
+2. **Silvia Rafa Ramadhani** - UI/UX Designer 
+3. **Irsyad Annafi Nurhikmah** - Fontend Developer 
 
-Once the job completes, your application will be available at `http://localhost:4943?canisterId={asset_canister_id}`.
+---
 
-If you have made changes to your backend canister, you can generate a new candid interface with
+## ✨ Contributions
 
-```bash
-npm run generate
-```
+Kami menyambut kontribusi untuk meningkatkan CultureSphere! Ikuti langkah berikut:
+1. Fork repository ini.
+2. Buat branch baru (`feature/your-feature`).
+3. Commit perubahan Anda dan push.
+4. Kirimkan Pull Request.
 
-at any time. This is recommended before starting the frontend development server, and will be run automatically any time you run `dfx deploy`.
+---
 
-If you are making frontend changes, you can start a development server with
+## 🎯 Future Roadmap
 
-```bash
-npm start
-```
+- Mengembangkan rekomendasi budaya berbasis AI.
+- Menambahkan pengalaman AR/VR untuk eksplorasi budaya.
+- Dukungan multibahasa untuk audiens global.
 
-Which will start a server at `http://localhost:8080`, proxying API requests to the replica at port 4943.
+---
 
-### Note on frontend environment variables
+## 📜 License
 
-If you are hosting frontend code somewhere without using DFX, you may need to make one of the following adjustments to ensure your project does not fetch the root key in production:
-
-- set`DFX_NETWORK` to `ic` if you are using Webpack
-- use your own preferred method to replace `process.env.DFX_NETWORK` in the autogenerated declarations
-  - Setting `canisters -> {asset_canister_id} -> declarations -> env_override to a string` in `dfx.json` will replace `process.env.DFX_NETWORK` with the string in the autogenerated declarations
-- Write your own `createActor` constructor
+Proyek ini dilisensikan di bawah [MIT License](LICENSE).
